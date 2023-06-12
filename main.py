@@ -25,9 +25,11 @@ if __name__ == "__main__":
 
     scroll_to_bottom()
 
+    # Click "See more" button until you reach the bottom
     while True:
         try:
             scroll_to_bottom()
+        # When throws the NoSuchElementException Exception means that you've reached the bottom so it will take all the donations and calculate the total revenue
         except NoSuchElementException:
             donations = driver.find_elements(By.XPATH, "/html/body/div[3]/div/div[5]/div[1]/div/div[3]/div/div[2]/div[1]/div/div[2]/div/div[1]/div/div[1]/div[2]/div[1]/span[2]")
             for donation in donations:
